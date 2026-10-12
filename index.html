@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskTime Pro - Smart Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">📅</span>
+            <span>TaskTime <span class="logo-highlight">Pro</span></span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#myTasks">My Tasks</a>
+            <a href="#dashboard">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="page-container">
+
+        <!-- Hero Section -->
+        <header class="hero" id="home">
+            <h1>TaskTime <span>Pro</span></h1>
+
+            <h2>Plan Today ✨ Achieve Tomorrow</h2>
+
+            <p>"Small steps every day lead to big results."</p>
+        </header>
+
+        <!-- Add Task Form -->
+        <section class="task-form">
+            <h2>Add a New Task</h2>
+
+            <form id="taskForm">
+
+                <div class="form-group">
+                    <label for="taskName">Task Name</label>
+
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="Enter your task..."
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="deadline">Choose Deadline</label>
+
+                    <input
+                        type="datetime-local"
+                        id="deadline"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Task Priority</label>
+
+                    <select id="priority">
+                        <option value="High">🔴 High Priority</option>
+                        <option value="Medium" selected>🟡 Medium Priority</option>
+                        <option value="Low">🟢 Low Priority</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="add-button">
+                    + Add Task
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Task Filters -->
+        <section class="filter-section">
+            <button class="filter-button active" data-filter="all">
+                All Tasks <span id="allCount">0</span>
+            </button>
+
+            <button class="filter-button" data-filter="pending">
+                ⏳ Pending <span id="pendingCount">0</span>
+            </button>
+
+            <button class="filter-button" data-filter="completed">
+                ✓ Completed <span id="completedCount">0</span>
+            </button>
+
+            <button class="filter-button" data-filter="overdue">
+                ⚠ Overdue <span id="overdueCount">0</span>
+            </button>
+        </section>
+
+        <!-- Tasks -->
+        <section class="tasks-section" id="myTasks">
+            <h2>My Tasks</h2>
+
+            <div class="search-box">
+                <input
+                    type="search"
+                    id="searchTask"
+                    placeholder="🔍 Search your tasks..."
+                >
+            </div>
+
+            <div id="taskList"></div>
+
+            <p id="emptyMessage" class="empty-message">
+                No tasks found. Add a task to get started! 🌸
+            </p>
+        </section>
+
+        <!-- Dashboard Statistics -->
+        <section class="dashboard" id="dashboard">
+            <h2>📊 Your Productivity</h2>
+
+            <div class="dashboard-stats">
+
+                <div class="stat-card total-card">
+                    <span class="stat-icon">📋</span>
+                    <h3>Total Tasks</h3>
+                    <p id="totalTasks">0</p>
+                </div>
+
+                <div class="stat-card pending-card">
+                    <span class="stat-icon">⏳</span>
+                    <h3>Pending Tasks</h3>
+                    <p id="pendingTasks">0</p>
+                </div>
+
+                <div class="stat-card completed-card">
+                    <span class="stat-icon">✅</span>
+                    <h3>Completed Tasks</h3>
+                    <p id="completedTasks">0</p>
+                </div>
+
+                <div class="stat-card overdue-card">
+                    <span class="stat-icon">⚠️</span>
+                    <h3>Overdue Tasks</h3>
+                    <p id="overdueTasks">0</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Motivation -->
+        <section class="quote-card">
+            ✨ "Discipline is the bridge between goals and achievement." 💗
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            © 2026 TaskTime Pro. Built with ❤️ for a Productive You.
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
